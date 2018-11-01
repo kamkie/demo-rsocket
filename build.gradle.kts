@@ -10,6 +10,7 @@ plugins {
 
 repositories {
     jcenter()
+    maven("https://oss.jfrog.org/libs-snapshot")
 }
 
 val kotlinVersion = "1.3.0"
@@ -22,8 +23,12 @@ dependencies {
 
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion")
     implementation("org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion")
-    implementation("io.rsocket:rsocket-core:$rsocketVersion")
-    implementation("io.rsocket:rsocket-transport-netty:$rsocketVersion")
+    implementation("io.rsocket.kotlin:rsocket-core:0.9-SNAPSHOT")
+    implementation("io.rsocket.kotlin:rsocket-transport-netty:0.9-SNAPSHOT")
+//    implementation("io.rsocket.kotlin:rsocket-transport-okhttp:0.9-SNAPSHOT")
+
+//    implementation("io.rsocket:rsocket-core:$rsocketVersion")
+//    implementation("io.rsocket:rsocket-transport-netty:$rsocketVersion")
     implementation("io.github.microutils:kotlin-logging:$kotlinLoggingVersion")
     implementation("org.springframework.boot:spring-boot-starter-logging")
 }
